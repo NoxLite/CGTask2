@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="anchorPane" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.cgvsu.cgtask2.ProtoCurveController">
-    <Canvas fx:id="canvas" width="800" height="600" AnchorPane.topAnchor="30.0"/>
-</AnchorPane>
+<StackPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cgvsu.cgtask2.ProtoCurveController">
+   <children>
+      <SplitPane fx:id="splitPane" dividerPositions="0.3145438898450947" prefHeight="362.0" prefWidth="466.0">
+        <items>
+            <StackPane />
+            <StackPane>
+               <children>
+                  <Canvas fx:id="canvas" height="600.0" width="600.0" StackPane.alignment="CENTER" />
+               </children>
+            </StackPane>
+        </items>
+      </SplitPane>
+   </children>
+</StackPane>

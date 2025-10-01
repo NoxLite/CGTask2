@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cgvsu.cgtask2.ProtoCurveController">
+<StackPane prefHeight="602.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cgvsu.cgtask2.ProtoCurveController">
    <children>
-      <SplitPane fx:id="splitPane" dividerPositions="0.3145438898450947" prefHeight="362.0" prefWidth="466.0">
+      <SplitPane fx:id="splitPane" dividerPositions="0.1313364055299539" prefHeight="362.0" prefWidth="466.0">
         <items>
-            <StackPane />
+            <StackPane>
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <ColorPicker layoutX="1.0" layoutY="25.0" />
+                        <ColorPicker layoutX="1.0" layoutY="69.0" />
+                        <Label layoutX="14.0" layoutY="5.0" text="Color 1" />
+                        <Label layoutX="14.0" layoutY="51.0" text="Color 2" />
+                     </children>
+                  </AnchorPane>
+               </children></StackPane>
             <StackPane>
                <children>
                   <Canvas fx:id="canvas" height="600.0" width="600.0" StackPane.alignment="CENTER" />
@@ -17,4 +28,7 @@
         </items>
       </SplitPane>
    </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
 </StackPane>

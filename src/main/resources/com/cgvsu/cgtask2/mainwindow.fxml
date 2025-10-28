@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane prefHeight="602.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cgvsu.cgtask2.ProtoCurveController">
+<StackPane prefHeight="602.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cgvsu.cgtask2.controller.Controller">
    <children>
       <SplitPane fx:id="splitPane" dividerPositions="0.1313364055299539" prefHeight="362.0" prefWidth="466.0">
         <items>

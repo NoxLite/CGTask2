@@ -1,3 +1,5 @@
+package com.cgvsu.cgtask2;
+
 import com.cgvsu.cgtask2.models.CircleModel;
 import javafx.geometry.Point2D;
 import org.junit.Test;

@@ -1,3 +1,5 @@
+package com.cgvsu.cgtask2;
+
 import com.cgvsu.cgtask2.models.InterpolationModel;
 import javafx.geometry.Point2D;
 import org.junit.Test;
@@ -10,7 +12,7 @@ public class InterpolationModelTest {
         Point2D start = new Point2D(0, 0);
         Point2D end = new Point2D(10, 0);
         Point2D current = new Point2D(0, 0);
-        assertEquals(0.0, InterpolationModel.getInterpolation(start, end, current), 1e-6);
+        assertEquals(0.0, new InterpolationModel().getInterpolation(start, end, current), 1e-6);
     }
 
     @Test
@@ -18,7 +20,7 @@ public class InterpolationModelTest {
         Point2D start = new Point2D(0, 0);
         Point2D end = new Point2D(10, 0);
         Point2D current = new Point2D(10, 0);
-        assertEquals(1.0, InterpolationModel.getInterpolation(start, end, current), 1e-6);
+        assertEquals(1.0, new InterpolationModel().getInterpolation(start, end, current), 1e-6);
     }
 
     @Test
@@ -26,6 +28,6 @@ public class InterpolationModelTest {
         Point2D start = new Point2D(0, 0);
         Point2D end = new Point2D(10, 0);
         Point2D current = new Point2D(5, 0);
-        assertEquals(0.5, InterpolationModel.getInterpolation(start, end, current), 1e-6);
+        assertEquals(0.5, new InterpolationModel().getInterpolation(start, end, current), 1e-6);
     }
 }

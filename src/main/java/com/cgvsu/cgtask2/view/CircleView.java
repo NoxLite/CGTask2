@@ -1,9 +1,6 @@
 package com.cgvsu.cgtask2.view;
 
-import com.cgvsu.cgtask2.models.CircleModel;
-import com.cgvsu.cgtask2.models.InterpolationModel;
-import com.cgvsu.cgtask2.models.PointsModel;
-import com.cgvsu.cgtask2.models.SectorModel;
+import com.cgvsu.cgtask2.models.*;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -24,8 +21,10 @@ public class CircleView {
 
     private Color color1;
     private Color color2;
+    
+    private final InterpolationInterface interpolation;
 
-    public CircleView(Canvas canvas, CircleModel circleModel, PointsModel pointsModel, SectorModel sectorModel, Color color1, Color color2) {
+    public CircleView(Canvas canvas, CircleModel circleModel, PointsModel pointsModel, SectorModel sectorModel, InterpolationInterface interpolation, Color color1, Color color2) {
         this.canvas = canvas;
         this.circleModel = circleModel;
         this.pointsModel = pointsModel;
@@ -33,6 +32,7 @@ public class CircleView {
         this.color1 = color1;
         this.color2 = color2;
 
+        this.interpolation = interpolation;
         graphicsContext = canvas.getGraphicsContext2D();
 
         canvas.setOnMouseClicked(event -> {
@@ -94,15 +94,14 @@ public class CircleView {
                         double endX = circleModel.getCenter().getX() + (dx / d) * circleModel.getDiameter() / 2;
                         double endY = circleModel.getCenter().getY() + (dy / d) * circleModel.getDiameter() / 2;
 
-                        double delta = InterpolationModel.getInterpolation(circleModel.getCenter(), new Point2D(endX, endY), new Point2D(x, y));
+                        double delta = interpolation.getInterpolation(circleModel.getCenter(), new Point2D(endX, endY), new Point2D(x, y));
 
                         double rnew = color1.getRed() + delta * (color2.getRed() - color1.getRed());
                         double gnew = color1.getGreen() + delta * (color2.getGreen() - color1.getGreen());
                         double bnew = color1.getBlue() + delta * (color2.getBlue() - color1.getBlue());
 
                         graphicsContext.getPixelWriter().setColor(x, y, new Color(rnew , gnew , bnew, 1.0));
-                        /* graphicsContext.setFill(new Color(rnew , gnew , bnew, 1.0));
-                        graphicsContext.fillRect(x, y, 1, 1); */
+
                     }
                 }
             }

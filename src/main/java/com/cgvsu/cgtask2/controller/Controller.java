@@ -1,6 +1,7 @@
 package com.cgvsu.cgtask2.controller;
 
 import com.cgvsu.cgtask2.models.CircleModel;
+import com.cgvsu.cgtask2.models.InterpolationModel;
 import com.cgvsu.cgtask2.models.PointsModel;
 import com.cgvsu.cgtask2.models.SectorModel;
 import com.cgvsu.cgtask2.view.CircleView;
@@ -50,7 +51,7 @@ public class Controller {
         PointsModel pointsModel = new PointsModel();
         SectorModel sectorModel = new SectorModel(pointsModel, circleModel);
 
-        circleView = new CircleView(canvas, circleModel, pointsModel, sectorModel, colorPicker1.getValue(), colorPicker2.getValue());
+        circleView = new CircleView(canvas, circleModel, pointsModel, sectorModel, new InterpolationModel(), colorPicker1.getValue(), colorPicker2.getValue());
 
         circleView.draw();
 
